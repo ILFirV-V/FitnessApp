@@ -1,10 +1,11 @@
 ﻿using System;
 
-namespace Fitness.BL.Model
+namespace FitnessProduct.BL.Model
 {
     /// <summary>
     /// Пол.
     /// </summary>
+    [Serializable]
     public class Gender
     {
         /// <summary>
