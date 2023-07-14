@@ -1,10 +1,5 @@
 ﻿using Fitness.BL.Controller;
-using FitnessProduct.BL.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FitnessProduct.CMD
 {
@@ -15,16 +10,52 @@ namespace FitnessProduct.CMD
             Console.WriteLine("Вас приветсвет учебное приложение");
             Console.WriteLine("Введите имя пользователя");
             var name = Console.ReadLine();
-            Console.WriteLine("Введите пол пользователя");
-            var gender = Console.ReadLine();
-            Console.WriteLine("Введите дату рождения пользователя");
-            var birthday = DateTime.Parse(Console.ReadLine()); //TODO переписать на TryParse
-            Console.WriteLine("Введите вес пользователя");
-            var weight = double.Parse(Console.ReadLine());
-            Console.WriteLine("Введите рост пользователя");
-            var height = double.Parse(Console.ReadLine());
-            var userController = new UserController(name, gender, birthday, weight, height);
+
+            var userController = new UserController(name);
+            if (userController.IsNewUsesr)
+            {
+                Console.WriteLine("Введите пол пользователя");
+                var gender = Console.ReadLine();
+                var birthday = ParseDate("дата");
+                var weight = ParseDouble("вес");
+                var height = ParseDouble("рост");
+                userController.SetNewUserData(gender, birthday, weight, height);
+            }
+            Console.WriteLine(userController.CurrentUser);
+            Console.ReadLine();
             userController.Save();
+        }
+
+        private static double ParseDouble(string name)
+        {
+            while (true)
+            {
+                Console.WriteLine($"Введите {name}: ");
+                if (double.TryParse(Console.ReadLine(), out double value))
+                {
+                    return value;
+                }
+                else
+                {
+                    Console.WriteLine($"Неверный формат {name}");
+                }
+            }
+        }
+
+        private static DateTime ParseDate(string name)
+        {
+            while (true)
+            {
+                Console.WriteLine("Введите дату рождения пользователя(dd:MM:yyyy)");
+                if (DateTime.TryParse(Console.ReadLine(), out DateTime birthday))
+                {
+                    return birthday;
+                }
+                else
+                {
+                    Console.WriteLine("Неверный формат даты!");
+                }
+            }
         }
     }
 }
