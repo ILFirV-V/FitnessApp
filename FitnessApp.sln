@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessProduct.BL", "Fitnes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessProduct.CMD", "FitnessProduct.CMD\FitnessProduct.CMD.csproj", "{470C8B61-F16E-4533-94A9-97738C80C31B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessProduct.BLTests", "FitnessProduct.BLTests\FitnessProduct.BLTests.csproj", "{7228681A-7552-4064-9AFF-4561348A80C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{470C8B61-F16E-4533-94A9-97738C80C31B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{470C8B61-F16E-4533-94A9-97738C80C31B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{470C8B61-F16E-4533-94A9-97738C80C31B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7228681A-7552-4064-9AFF-4561348A80C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7228681A-7552-4064-9AFF-4561348A80C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7228681A-7552-4064-9AFF-4561348A80C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7228681A-7552-4064-9AFF-4561348A80C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
